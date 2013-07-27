@@ -1,0 +1,22 @@
+# This file contains the correction of the windows bugs
+
+#####
+
+##Error: 
+
+error C3861: 'round': identifier not found
+
+##Problem:
+
+There isn't a function called round in the math.h library.
+
+##Solution:
+
+Add the function round to Math.h (Microsoft Visual Studio XX.X\VC\include)
+
+	static inline double round(double value)
+	{
+	return floor(value + 0.5);
+	}
+
+#####
